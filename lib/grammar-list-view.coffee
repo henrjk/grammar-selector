@@ -20,6 +20,9 @@ class GrammarListView extends SelectListView
     element = document.createElement('li')
     element.classList.add('active') if grammar is @currentGrammar
     grammarName = grammar.name ? grammar.scopeName
+    scopeName = grammar.scopeName
+    if scopeName != grammarName
+      grammarName = grammarName + ' ( scopeName=' + scopeName + ')'
     element.textContent = grammarName
     element.dataset.grammar = grammarName
     element
